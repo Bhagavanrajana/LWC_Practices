@@ -3,7 +3,8 @@ export default class HelloWorld extends LightningElement {
   Fullname="Bhagavan Rajana"
   obj={
     name:"Bhaggu",
-    place: "India"
+    place: "India",
+    Idd:"2185089"
   }
   arr=["a","b","c"]
 }
