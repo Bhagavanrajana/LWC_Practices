@@ -1,9 +1,14 @@
-import { LightningElement } from 'lwc';
+import { LightningElement ,track} from 'lwc';
 export default class HelloWorld extends LightningElement {
   Fullname="Bhagavan Rajana"
   course="Apex"
-  changeHandler(event)
+  @track address={
+    city :'Hyderabad',
+    State : 'TG',
+    Country: 'India'
+  }
+  trackHandler(event)
   {
-    this.course=event.target.value
+    this.address.city=event.target.value
   }
 }
