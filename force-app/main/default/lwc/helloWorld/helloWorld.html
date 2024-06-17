@@ -1,7 +1,8 @@
 <template>
-    <lightning-card title="HelloWorld" icon-name="custom:custom14">
-      <input type="text" onkeyup={changeHandler}/>
+    <lightning-card title="Two Way Binding" icon-name="custom:custom14">
+      <div class="slds-m-around_medium">
+      <lightning-input type="text" label="Enter some text" onkeyup={changeHandler}></lightning-input>
       <div>{Fullname} and my course is {course}</div>
-
+      </div>
       </lightning-card>
   </template>
