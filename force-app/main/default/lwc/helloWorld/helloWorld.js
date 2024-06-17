@@ -1,9 +1,9 @@
 import { LightningElement } from 'lwc';
 export default class HelloWorld extends LightningElement {
   Fullname="Bhagavan Rajana"
-  obj={
-    name:"Bhaggu",
-    place: "India"
+  course="Apex"
+  changeHandler(event)
+  {
+    this.course=event.target.value
   }
-  arr=["a","b","c"]
 }
