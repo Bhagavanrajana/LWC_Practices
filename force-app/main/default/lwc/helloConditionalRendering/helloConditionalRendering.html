@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Data Rendering" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+
+            <button class="slds-button slds-button_brand" onclick={handleClick}>Show Data</button>
+            <template if:true={isVisible}>
+                <div  class="slds-text-heading_large">Welcome to Conditional Rendering by using if:true</div>
+            </template>
+
+            <lightning-input type="text" label="Enter hello to see the data" onkeyup={changeHandler}></lightning-input>
+            <template if:true={helloMethod}>
+                <div  class="slds-text-heading_large">You typed correctly man</div>
+            </template>
+        </div>
+        </lightning-card>
+  
+</template>
