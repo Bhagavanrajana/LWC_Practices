@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Parent Component" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            
+            <template if:true={isChildVisible}>
+                <lightning-button variant="brand"
+                label="Show child" title="Show Child"
+                onclick={handleClick} class="slds-m-left-x-small">
+                </lightning-button>
+            </template>
+
+            
+            <template if:false={isChildVisible}>
+                <lightning-button variant="brand"
+                label="Hide child" title="Hide Child"
+                onclick={handleClick} class="slds-m-left-x-small">
+                </lightning-button>
+            </template>
+            <template if:true={isChildVisible}>
+                <c-hello-child></c-hello-child>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

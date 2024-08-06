@@ -1,0 +1,9 @@
+div {
+    color: rebeccapurple;
+    padding: 50px;
+}
+
+p:hover {
+    border: rebeccapurple;
+    font-size: 50px;
+}
