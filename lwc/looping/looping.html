@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Looping by using for:each">
+        <div class="slds-m-around_small">
+            <template if:true={carList} for:each={carList} for:item="car">
+                <ul class="slds-list_dotted" key={car.Id}>
+                    <li>{car}</li>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Looping by using for:each">
+        <div class="slds-m-around_small">
+            <template if:true={ceoList} for:each={ceoList} for:item="ceo">
+                <ul class="slds-list_dotted" key={ceo.id}>
+                    <li><strong>{ceo.company}</strong></li>
+                    <li>{ceo.name}</li>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <!--iteration using iterator directive-->
+
+    <lightning-card title="Looping by using Iterator">
+        <div class="slds-m-around_small">
+            <template iterator:ceo={ceoList}>
+                <div class="slds-m-around_small" key={ceo.value.id}>
+                    <strong>{ceo.value.company} </strong>
+                    {ceo.value.name}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+</template>

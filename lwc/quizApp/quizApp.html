@@ -1,0 +1,38 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Quiz App" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <form>
+                <template for:each={questionList} for:item="quiz">
+                    <div key={quiz.id} class="slds-p-bottom_small">
+                        <div><strong>{quiz.id} - {quiz.name}</strong></div>
+                        <div class="slds-grid slds-gutters slds-m-bottom_small">
+                            <div class="slds-col">
+                                <input type="radio" name={quiz.id} id={quiz.id} value="a" onchange={changeHandler}/>
+                            <span>{quiz.answers.a}</span>
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={quiz.id} id={quiz.id} value="b" onchange={changeHandler}/>
+                            <span>{quiz.answers.b}</span>
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={quiz.id} id={quiz.id} value="c" onchange={changeHandler}/>
+                            <span>{quiz.answers.c}</span>
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={quiz.id} id={quiz.id} value="d" onchange={changeHandler}/>
+                                <span>{quiz.answers.d}</span>
+                            </div>
+                    </div>
+                    </div>
+                </template>
+                <lightning-button variant="brand" label="Submit" value="Submit" disabled={allSelected} onclick={submitHandler} class="slds-m-around_small">
+                </lightning-button>
+                <lightning-button variant="brand" label="Reset" value="Reset" onclick={resetHandler} class="slds-m-around_small">
+                </lightning-button>
+            </form>
+            <template if:true={isVisible}>
+                <div class={isScored}>You have scored {correctAnswers} out of {questionList.length}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

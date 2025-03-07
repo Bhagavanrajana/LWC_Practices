@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="@track Decorator">
+        <lightning-input type="text" label="Enter your role" onkeyup={trackHandler}></lightning-input>
+        <div>
+            {fullName} and im a {title} and i lives in {obj.city}
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Getter">
+        <lightning-input type="number" label="Enter your Score" onchange={getHandler}></lightning-input>
+        <div>
+            your score is {score} and your Grade is {gradeMethod}
+        </div>
+    </lightning-card>
+</template>

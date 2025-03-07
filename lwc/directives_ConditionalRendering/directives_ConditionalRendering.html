@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Directives- Conditional Rendering">
+        <div class="slds-m-around_large">
+            <lightning-button label="Click cheyy" onclick={clickMethod}>
+            </lightning-button>
+            <template if:false={isVisible}>
+                <div>Button click cheyy ra data ravali ante</div>
+            </template>
+
+            <template if:true={isVisible}>
+                <div class="slds-text-color_error">Button click cheyamante chesi dhengaava pussy cat</div>
+            </template>
+
+
+
+            <lightning-input type="text" label="Enter hello to view data" onkeyup={conditionMethod}>
+                <template if:true={helloWorld}>
+                    <div>Correct type chesaav ra kurroda..</div>
+                </template>
+            </lightning-input>
+        </div>
+    </lightning-card>
+</template>
