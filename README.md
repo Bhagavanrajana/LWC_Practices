@@ -13,5 +13,3 @@ Here, you'll find:
 ✅ Sample LWC components  
 ✅ Hands-on projects  
 ✅ Code snippets and utilities  
-
----
