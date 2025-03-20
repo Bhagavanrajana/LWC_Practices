@@ -1,0 +1,30 @@
+<template>
+    <!--Steps: First create two components as Parent and Child.
+    Step2: Create method on child component and make it as CustomEvent - Dispatch it like: 
+    const myEvent=new CustomEvent('close',{
+            detail:"This is from custom event detail data passing"
+        })
+        this.dispatchEvent(myEvent)
+
+    step3: On parent component receive customEvent it as by adding "on" : onclose={handleOkay} parent template
+    step4: Modify function in parent JS accordingly
+    -->
+    <lightning-card title="Child to Parent Communication">
+        <div class="slds-m-around_medium">
+
+            <lightning-button label="Show Modal" onclick={modalHandler}>
+
+            </lightning-button>
+            <h1>{msg}</h1>
+            <template if:true={showModal}>
+
+                <c-c2p-child-component
+                onclose={handleOkay}
+                ></c-c2p-child-component>
+
+
+            </template>
+        </div>
+    </lightning-card>
+
+</template>

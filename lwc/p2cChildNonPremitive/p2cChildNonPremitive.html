@@ -1,0 +1,25 @@
+<template>
+
+    <lightning-card>
+        <div class="slds-m-around_medium">
+            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Carousel With disable-auto-scroll Attribute
+                <lightning-carousel disable-auto-scroll>
+                    <template for:each={caroselData} for:item="item">
+                        <lightning-carousel-image
+                        key={item.header}
+                        src = {item.src}
+                        header = {item.header}
+                        description = {item.description}
+                        ></lightning-carousel-image>
+                    </template>
+                    
+                </lightning-carousel>
+                </div>
+        </div>
+        
+        <div class="slds-m-around_medium">
+            <lightning-progress-bar value={progressVal} size="large"></lightning-progress-bar>
+        </div>
+    </lightning-card>
+
+</template>

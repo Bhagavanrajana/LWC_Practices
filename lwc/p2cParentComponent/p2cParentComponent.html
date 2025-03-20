@@ -1,0 +1,34 @@
+<template>
+    <c-p2c-child-component
+    message="All is well"
+    number=69
+    is-valid
+    card-heading="Parent to child communication bro..."
+    ></c-p2c-child-component>
+
+    <div class="slds-m-bottom_medium"></div>
+
+    <!--Calling child component for Non Premitive data Passing example-->
+    <c-p2c-child-non-premitive
+    carosel-data= {carouselDetails}
+
+    progress-val={percentage}
+    ></c-p2c-child-non-premitive>
+
+    <div class="slds-m-bottom_medium"></div>
+
+    <lightning-card title="Enter Percentage">
+        <lightning-input type="number" label="Enter Percentage" onkeyup={handler}
+        value={percentage}></lightning-input>
+    </lightning-card>
+
+
+    <div class="slds-m-bottom_medium"></div>
+
+    <!--Calling child component for Method Passing example-->
+    <lightning-button variant="base" label="Base" title="Click Bro" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+
+    <c-p2c-child-method-passing></c-p2c-child-method-passing>
+    
+</template>
