@@ -8,7 +8,7 @@ This repo contains all my hands-on experiments, projects, and learning exercises
 
 ## 📌 **About This Repository**  
 This repository serves as my personal playground for learning and improving **Lightning Web Components (LWC)**.  
-Here, you'll find:  
+Here, you'll find:-
 ✅ Small practice exercises  
 ✅ Sample LWC components  
 ✅ Hands-on projects  
