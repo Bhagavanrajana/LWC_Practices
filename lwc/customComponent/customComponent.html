@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center">
+            <h2 class="slds-card__header-title">
+                <slot name="title"></slot>
+            </h2>
+        </header>
+    </div>
+    <div class="slds-flex">
+        <slot name="actions"></slot>
+    </div>
+    
+    <div class="slds-flex">
+        <slot></slot>
+    </div>
+
+    <div class="slds-card__footer slds-hide">
+        <slot name="footer" onslotchange={slotChangeHandler}>
+        </slot>
+    </div>
+
+</template>

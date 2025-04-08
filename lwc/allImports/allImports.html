@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="Importing Third Party JS">
+        <div class="slds_p_around-medium">
+            <strong class="slds_p_around-medium">Current Time is :</strong>{dateTime}
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Importing Third Party CSS">
+        <div class="slds_p_around-medium">
+            <p class="animate__rubberBand animate__animated slds_p_around-medium" style="--animate-duration: 3s;">Hurray my Third Party CSS is loaded successfully..</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Content Asset Demo">
+        <a href={song} download>Download Song</a>
+    </lightning-card>
+
+    <lightning-card title="Internationalization example">
+        <div>
+            <p>before Internationalization :-{num}</p>
+            <p>after Internationalization :-{formattedNumber}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Importing Custom Label example">
+        <div>
+            <p>{customLabel}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Accessing User Permissions">
+        <div>
+            <template if:true={isAccessHadMethod}>
+                <p>You have access</p>
+            </template>
+            <template if:false={isAccessHadMethod}>
+                <p>You don't have access</p>
+            </template>
+        </div>
+
+        <div>
+            <template if:true={customAccessHadMethod}>
+                <p>You have custom access</p>
+            </template>
+            <template if:false={customAccessHadMethod}>
+                <p>You don't have custom access</p>
+            </template>
+        </div>
+
+    </lightning-card>
+
+    <lightning-card title="User Details">
+        <div>
+            <p>User Id :-{userId}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Record Page details">
+        <div>
+            <p>Record Id :-{recordId}</p>
+            <p>Object Name is :-{objectApiName}</p>
+        </div>
+    </lightning-card>
+
+</template>
