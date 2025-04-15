@@ -1,0 +1,121 @@
+<template>
+    <!--
+    1.Steps to use lightning-record-form: 
+    -> import the Objects from '@salesforce/schemas'
+    -> import toast from 'lightning/platformShowToastEvent'
+    2)Parameters for lightning-record-form are:
+        -> object-api-name: API name of the object
+        -> fields: API names of the fields to be displayed in the form
+        -> onsuccess: Event handler that is called when the record is saved
+        -> mode: Determines the form mode, valid values are "readonly", "readwrite", "edit"
+        -> columns: Determines the number of columns of the form        ->    
+    -->
+    <lightning-card title="Creating Record by record Form">
+        <lightning-record-form
+            object-api-name={ObjectApi}
+            fields={fields}
+            onsuccess={handleSuccess}
+            >
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Viewing Record by record Form">
+        <lightning-record-form
+            record-id="001F300001lab22IAA"
+            object-api-name={ObjectApi}
+            fields={fields}
+            >
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Editing Record by record Form">
+        <lightning-record-form
+            record-id="001F300001lab22IAA"
+            object-api-name={ObjectApi}
+            fields={fields}
+            mode="readonly"
+            >
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Editing Record by record Form">
+        <lightning-record-form
+            record-id="001F300001lab22IAA"
+            object-api-name={ObjectApi}
+            fields={fields}
+            mode="edit"
+            columns="3"
+            >
+        </lightning-record-form>
+    </lightning-card>
+
+    <!--Example for Lightning-Record-View-Form-->
+
+    <lightning-card title="Viewing Record by record View Form">
+        <lightning-record-view-form
+        object-api-name="Account"
+        record-id="001F300001lab22IAA"
+        >
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_6-of-12">
+                <lightning-output-field field-name="Name"></lightning-output-field>
+                <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <lightning-output-field field-name="Type"></lightning-output-field>
+                <lightning-output-field field-name="Industry"></lightning-output-field>
+            </div>
+        </div>
+        </lightning-record-view-form>
+
+            <!--Example for Lightning-Record-Edit-Form-->
+
+        <lightning-card title="Editing Record by record Edit Form">
+            <lightning-record-edit-form
+                object-api-name={ObjectApi2}
+                record-id="003F3000014QpuTIAS"
+                >
+                <lightning-messages>
+                </lightning-messages>
+
+                <lightning-input-field field-name={cont_fields.firstName}>
+                </lightning-input-field>
+                <lightning-input-field field-name={cont_fields.lastName}>
+                </lightning-input-field>
+                <lightning-input-field field-name={cont_fields.email}>
+                </lightning-input-field>
+                <lightning-input-field field-name={cont_fields.accountField}>
+                </lightning-input-field>
+
+                <lightning-button
+                    variant="brand"
+                    type="submit"
+                    name="update"
+                    label="Update"></lightning-button>
+                <lightning-button 
+                variant="brand"
+                type="cancel"
+                label="Cancel"
+                onclick={resetHandler}
+                ></lightning-button>
+            </lightning-record-edit-form>
+        </lightning-card>
+
+    </lightning-card>
+
+    <lightning-card title="Viewing Record by record View Form">
+        <lightning-record-view-form
+            object-api-name="Contact"
+            record-id="003F3000014QpuTIAS"
+            >
+        <lightning-output-field field-name={cont_fields.firstName}>
+        </lightning-output-field>
+        <lightning-output-field field-name={cont_fields.lastName}>
+        </lightning-output-field>
+        <lightning-output-field field-name={cont_fields.email}>
+        </lightning-output-field>
+        <lightning-output-field field-name={cont_fields.accountField}>
+        </lightning-output-field>
+        </lightning-record-view-form>
+        </lightning-card>
+</template>
