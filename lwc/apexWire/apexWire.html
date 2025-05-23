@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Apex wire">
+        <template if:true={accounts.data}>
+            <template for:each={accounts.data} for:item="account">
+                <div class="slds-box slds-box_xx-small slds-m-around_small" key={account.Id}>
+                    <p class="slds-text-heading_medium">{account.Name}</p>
+                    <p class="slds-text-body_regular">{account.Phone}</p>
+                    <p class="slds-text-body_regular">{account.Industry}</p>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>
